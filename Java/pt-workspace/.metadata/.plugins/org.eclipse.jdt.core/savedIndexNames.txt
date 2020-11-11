@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+C:\Users\sandra\OneDrive - Lund University\EDAA55-ht2020\pt-workspace\.metadata\.plugins\org.eclipse.jdt.core
+953468411.index
+1914818206.index
+1882440615.index
+1741444052.index
+3907759731.index
+4084394101.index
+2841194117.index
+1622796828.index
+1897850525.index
+3129716673.index
