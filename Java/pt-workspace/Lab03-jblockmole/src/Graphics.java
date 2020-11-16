@@ -21,7 +21,7 @@ public class Graphics {
 		int top    = y * blockSize;
 		int bottom = top + blockSize - 1;
 		
-		// g) Ordningen blir LT, RT, LB, RB
+		// g) 4 st linjer. Ordningen blir LT, RT, LB, RB
 		for(int row = top; row <= bottom; row++) {
 			window.moveTo(left, row);
 			window.lineTo(right, row);

@@ -19,11 +19,9 @@ public class Mole {
 		int oldY = y;
 		
 		while (true) {
-			if(oldX != x && oldY != y) {
-				graphics.block(oldX, oldY, Colors.TUNNEL_COLOR);
-			}
-			
+			graphics.block(oldX, oldY, Colors.TUNNEL_COLOR);
 			graphics.block(x, y, Colors.MOLE_COLOR);
+			
 			char key = graphics.waitForKey();
 			
 			oldX = x;
@@ -45,7 +43,6 @@ public class Mole {
 	}
 	
 	public void drawWorld() {
-		// graphics.square();
 		graphics.rectangle(0, 0, graphics.getWidth(), graphics.getHeight(), Colors.SOIL_COLOR);
 		
 		// graphics.block(10, 10, Colors.MOLE_COLOR);

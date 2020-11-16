@@ -10,38 +10,38 @@ public class GameManager {
 		GameManager gameManager = new GameManager();
 		Scanner scanner = new Scanner(System.in);
 
-		// V√§lkomna spelarna
+		// V‰lkomna spelarna
 		gameManager.printCoolString("Welcome to an Epic Game of Four-in-a-Row!");
 
-		// Skriv ut br√§det en g√•ng innan loopen b√∂rjar d√• scannern h√§mmar allt exikverande.
+		// Skriv ut br‰det en gÂng innan loopen bˆrjar dÂ scannern h‰mmar allt exikverande.
 		gameManager.board.printBoard();
 		gameManager.printPlayerTurn();
 
 
-		// TODO: Sluta spelet om br√§det blir fullt xP
+		// TODO: Sluta spelet om br‰det blir fullt xP
 		// TODO: Detektera i loopen om en spelare har vunnit.
 		// Spelloopen
 		while(true) {
-			// Skaffa vilken rad spelaren vill spela p√•.
-			int rowInput = scanner.nextInt();
+			// Skaffa vilken kolumn spelaren vill spela i.
+			int columnInput = scanner.nextInt();
 
-			// Testa att spela p√• den raden med nuvarande spelaren.
-			boolean validMove = gameManager.play(rowInput, gameManager.currentPlayerBrick);
+			// Testa att spela pÂ den kolumnen med nuvarande spelaren.
+			boolean validMove = gameManager.play(columnInput, gameManager.currentPlayerBrick);
 
 			if(validMove) {
-				// Om, och endast om, det var ett korrekt drag, byta till n√§sta spelare.
+				// Om, och endast om, det var ett korrekt drag, byta till n‰sta spelare.
 				gameManager.switchPlayer();
 			}
 
-			// Rita br√§det
+			// Rita br‰det
 			gameManager.board.printBoard();
 			
 			if(!validMove) {
 				// Informera spelarna ifall det senaste draget var felaktigt.
-				gameManager.printCoolString(rowInput + " is an Invalid Move! Try again.");
+				gameManager.printCoolString(columnInput + " is an Invalid Move! Try again.");
 			}
 			
-			// Skriv vems tur det √§r.
+			// Skriv vems tur det ‰r.
 			gameManager.printPlayerTurn();
 		}
 	}
@@ -83,14 +83,14 @@ public class GameManager {
 		printCoolString(getCurrentPlayerName() + "'s turn!");
 	}
 
-	public boolean play(int row, Board.brickTypes playerBrick) {
-        if(row < 0 || row >= board.getWidth()) {
+	public boolean play(int col, Board.brickTypes playerBrick) {
+        if(col < 0 || col >= board.getWidth()) {
             return false;
         }
 
         for(int i = board.getHeight()-1; i >= 0; i--) {
-            if(board.getBrick(row, i) == Board.brickTypes.NO_PLAYER) {
-                board.setBrick(row, i, playerBrick);
+            if(board.getBrick(col, i) == Board.brickTypes.NO_PLAYER) {
+                board.setBrick(col, i, playerBrick);
                 return true;
             }
         }
