@@ -1,0 +1,9 @@
+
+
+## Svar på uppgift 7
+
+| Exempel på     | Namn | Får användas var                   |
+|----------------|------|------------------------------------|
+| Attribut       | x, y | Inuti hela klassen Turtle          |
+| Parameter      | beta | Inuti en metods scope (se left())  |
+| Lokal variabel | endX | Inom det lokala scopet (forward()) |

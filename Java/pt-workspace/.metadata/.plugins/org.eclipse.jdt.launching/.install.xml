@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
     <entry loc="C:\Program Files\AdoptOpenJDK\jdk-11.0.4.11-hotspot" stamp="1570109256171"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home" stamp="1550717644000"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home" stamp="1554186779000"/>
+    <entry loc="/Users/erik/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_14.0.2.v20200815-0932" stamp="1604928508863"/>
+    <entry loc="/Users/erik/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_14.0.2.v20200815-0932/jre" stamp="1604928508861"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home" stamp="1570272145000"/>
 </dirs>
