@@ -9,14 +9,16 @@ import javax.imageio.ImageIO;
 public class MemoryCardImage {
 	private Image back;
 	private Image front;
+	private String frontFileName;
+	private boolean isFrontUp = false;
 	
 	/** Skapar en tvåsidig bild av ett memorykort. Bilden på framsidan finns i
 	    filen med namnet frontFileName och bilden på baksidan i filen med namnet 
 	    backFileName. */
 	public MemoryCardImage(String frontFileName, String backFileName) {
 		front = readImage(frontFileName);
+		this.frontFileName = frontFileName;
 		back = readImage(backFileName);
-
 	}
 	
 	/** Returnerar bilden på framsidan. */
@@ -39,6 +41,26 @@ public class MemoryCardImage {
 			ex.printStackTrace();
 		}
 		return img;
+	}
+	
+	public boolean isSameAs(MemoryCardImage other) {
+		return frontFileName.compareToIgnoreCase(other.frontFileName) == 0;
+	}
+	
+	public void flip() {
+		isFrontUp = !isFrontUp;
+	}
+	
+	public Image getCurrentSideUp() {
+		return isFrontUp ? getFront() :  getBack();
+	}
+	
+	public void setBackUp(boolean backUp) {
+		isFrontUp = !backUp;
+	}
+	
+	public boolean isBackUp() {
+		return !isFrontUp;
 	}
 	
 }

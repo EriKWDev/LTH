@@ -4,6 +4,7 @@ public class Applicant implements Comparable<Applicant> {
 	//Varje sökande har ett namn och ett antal betyg
 	private String name;
 	private int[] grades;
+	public static final int NUMBER_OF_GRADES = 5;
 
 	public Applicant(String name, String gradesAsString) {
 		this.name = name;
@@ -21,25 +22,54 @@ public class Applicant implements Comparable<Applicant> {
 		grades = new int[g.length];
 		// Iterera över alla betyg för att översätta dessa till ett heltal
 		for (int i = 0; i < g.length; i++) {
-			if (g[i].equals("U")) {
-				// Om underkänd så räknar vi det som en nolla
+			String uperCaseString = g[i].toUpperCase();
+			
+			// Om underkänd så räknar vi det som en nolla
+			if (uperCaseString.equals("U")) {
 				grades[i] = 0;
+			
+			// Om A-B så översätter vi det till siffror.
+			} else if(uperCaseString.equals("A")) {
+				grades[i] = 5;
+			} else if(uperCaseString.equals("B")) {
+				grades[i] = 4;
+			} else if(uperCaseString.equals("C")) {
+				grades[i] = 3;
 			} else {
 				grades[i] = Integer.parseInt(g[i]);
+				
+				// Ifall indatan är större än vad som är tillåtet måste den tyvärr tolkas som 0.
+				if(grades[i] < 0 || grades[i] > 5) {
+					grades[i] = 0;
+				}
 			}
 		}
 	}
 
 	public double getAvgGrade() {
-		return 0; 
+		double averageGrade = 0;
+		
+		for(int grade : grades) {
+			averageGrade += (double) grade;
+		}
+		
+		averageGrade /= NUMBER_OF_GRADES;
+		
+		return averageGrade;
 	}
 
-	/*
-	  Implementera denna när labbeskrivningen kräver det 
+	
+	  // Implementera denna när labbeskrivningen kräver det 
 	  public String toString() {
-	      //Fyll i kod här 
+		  String gradeCommaString = "";
+		  
+		  for(int i = 0; i < grades.length; i++) {
+			  gradeCommaString += grades[i] + (i + 1 < grades.length ? ", " : "");
+		  }
+		  
+		  return name + "[" + gradeCommaString + "]" + "(avg:" + getAvgGrade() + ")";
 	  }
-	 */
+	 
 
 	/*
 	 * Metod för att jämföra detta Applicant-objekt med ett annat och få ut vilket
