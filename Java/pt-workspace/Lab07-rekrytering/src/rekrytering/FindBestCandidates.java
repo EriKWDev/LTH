@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class FindBestCandidates {
-	private static final double MIN_AVG_GRADE = 3.0;
+	private static final double MIN_AVG_GRADE = 4.5;
 
 	public static void main(String[] args) {
 		// Läs från fil (Börja med "applications_small.txt), spara resultatet i en

@@ -39,8 +39,7 @@ public class MemoryGame {
 						}
 					}
 				}
-				
-				
+				currentTurn++;
 			} else {
 				System.out.println("Already turned that one!");
 			}
@@ -49,7 +48,6 @@ public class MemoryGame {
 			window.drawBoard();
 			window.moveTo(10, 10);
 			window.writeText("How many clicks: " + currentTurn);
-			currentTurn++;
 		}
 		
 		System.out.println("Job's done, you won!");

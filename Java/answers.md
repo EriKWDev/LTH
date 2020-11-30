@@ -3,14 +3,14 @@
 
 7. # Rekryteringen
    1. ### Vad skall implementeras i Applicant.java?
-    Det verkar som att jag kommer att behöva implementera getAvgGrade() samt toString(). Eventuellt kanske också ändra hur parseGrades() algoritmen funkar föär den verkar lite icke-tillförlitlig.
+    Det verkar som att jag kommer att behöva implementera getAvgGrade() samt toString(). Eventuellt kanske också ändra hur parseGrades() algoritmen funkar för den verkar lite icke-tillförlitlig.
 
    2. ## FileReader och FindBestCandidate
    De båda klasserna har en ganska tydlig ansvarsfördelning som man lätt kan finna bara på namnen.
 
    3. ## --
 
-   4. ## Hur översätts bokstavsbetygen tilkl siffror?
+   4. ## Hur översätts bokstavsbetygen till siffror?
    På rad 16-31 i Applicant.java med metoden parseGrades(). Programmet kollar om betyget på plats i i vektorn av betyg är lika med "U" och sätter det isf till 0 (rad 26). Vektorn med heltalsvärden heter grades[].
 
    5. ## Implementera getAvgGrade()
