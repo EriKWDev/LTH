@@ -43,7 +43,7 @@ public class BankApplication {
 		}
 	}
 	
-	void removeAccount() {
+	private void removeAccount() {
 		BankAccount account = askForAccount("konto: ");
 		if(account == null) {
 			return;
@@ -52,9 +52,16 @@ public class BankApplication {
 		bank.removeAccount(account.getAccountNumber());
 	}
 	
-	void internalTransfer() {
+	private void internalTransfer() {
 		BankAccount fromAccount = askForAccount("från konto: ");
+		if(fromAccount == null) {
+			return;
+		}
+		
 		BankAccount toAccount = askForAccount("till konto: ");
+		if(toAccount == null) {
+			return;
+		}
 		
 		String amountInput = getInputWithQuestion("belopp: ");
 		double amount;
@@ -71,13 +78,13 @@ public class BankApplication {
 			return;
 		}
 		
-		fromAccount.deposit(amount);
-		toAccount.withdraw(amount);
+		fromAccount.withdraw(amount);
+		toAccount.deposit(amount);
 		
 		print(fromAccount.toString());
 	}
 	
-	void deposit() {
+	private void deposit() {
 		BankAccount account = askForAccount("konto: ");
 		if(account == null) {
 			return;
@@ -97,7 +104,7 @@ public class BankApplication {
 		print(account.toString());
 	}
 	
-	BankAccount askForAccount(String question) {
+	private BankAccount askForAccount(String question) {
 		String accountNumberInput = getInputWithQuestion(question);
 		int accountNumber;
 		
@@ -117,7 +124,7 @@ public class BankApplication {
 		return account;
 	}
 	
-	void withdraw() {
+	private void withdraw() {
 		BankAccount account = askForAccount("från konto: ");
 		if(account == null) {
 			return;
@@ -142,7 +149,7 @@ public class BankApplication {
 		print(account.toString());
 	}
 	
-	void getAccountsOfCustomerWithId() {
+	private void getAccountsOfCustomerWithId() {
 		String idInput = getInputWithQuestion("id: ");
 		long idNumber;
 		
@@ -165,7 +172,7 @@ public class BankApplication {
 		}
 	}
 	
-	void searchForCustomersByName() {
+	private void searchForCustomersByName() {
 		String nameQuery = getInputWithQuestion("namn: ");
 		ArrayList<Customer> matchingCustomers = bank.findByPartOfName(nameQuery);
 		
@@ -178,7 +185,7 @@ public class BankApplication {
 		}
 	}
 	
-	void createAccount() {
+	private void createAccount() {
 		String holderName = getInputWithQuestion("namn: ");
 		String idInput = getInputWithQuestion("id: ");
 		long idNumber;
@@ -201,7 +208,7 @@ public class BankApplication {
 		print("konto skapat: " + accountNumber);
 	}
 	
-	void printAccounts() {
+	private void printAccounts() {
 		ArrayList<BankAccount> bankAccounts = bank.getAllAccounts();
 		
 		if(bankAccounts.isEmpty()) {
@@ -214,12 +221,12 @@ public class BankApplication {
 		}
 	}
 	
-	String getInputWithQuestion(String question) {
+	private String getInputWithQuestion(String question) {
 		System.out.print(question);
 		return scanner.nextLine();
 	}
 	
-	void printOptions() {
+	private void printOptions() {
 		String[] linesToPrint = {
 			"1. Hitta konto utifrån innehavare",
 			"2. Sök kontoinnehavare utifrån (del av) namn",
@@ -237,30 +244,30 @@ public class BankApplication {
 		}
 	}
 	
-	void print(String text) {
+	private void print(String text) {
 		System.out.println(text);
 	}
 	
-	void print() {
+	private void print() {
 		System.out.println();
 	}
 	
-	public void prettyPrint(String text) {
-		String decoration = "~";
+	private void prettyPrint(String text) {
+		String decoration = "#";
 		
-		System.out.println(decoration.repeat(text.length() + 6 + 2));
-		System.out.println(decoration.repeat(3) + " " + text + " " + decoration.repeat(3));
-		System.out.println(decoration.repeat(text.length() + 6 + 2));
-		System.out.println();
+		print(decoration.repeat(text.length() + 6 + 2));
+		print(decoration.repeat(3) + " " + text + " " + decoration.repeat(3));
+		print(decoration.repeat(text.length() + 6 + 2));
+		print();
 	}
 	
-	void hoppsan(String text) {
+	private void hoppsan(String text) {
 		print();
 		print("Hoppsan!");
 		print(text);
 	}
 
-	boolean canHandleMainLoopInput(String input) {
+	private boolean canHandleMainLoopInput(String input) {
 		int inputInteger = 0;
 		
 		try {

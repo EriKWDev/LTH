@@ -4,9 +4,17 @@ public class Customer {
 	private long idNumber;
 	private int customerNumber;
 	
+	private static int internalCustomerNumberCounter = 1000;
+	
+	private int getNewCustomerNumber() {
+		internalCustomerNumberCounter++;
+		return internalCustomerNumberCounter;
+	}
+	
 	public Customer(String name, long idNumber) {
 		this.name = name;
 		this.idNumber = idNumber;
+		this.customerNumber = getNewCustomerNumber();
 	}
 	
 	public String getName() {
