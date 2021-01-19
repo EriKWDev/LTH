@@ -1,0 +1,5 @@
+Svar på förberedelseuppgifter för labb 1:
+
+# F1:
+	NullPointerException uppstod i Scheduler.java på rad 19. Orsaken är att machines[] inte initieras i konstruktorn utan att det istället skapas en ny lokal variabel.
+	
