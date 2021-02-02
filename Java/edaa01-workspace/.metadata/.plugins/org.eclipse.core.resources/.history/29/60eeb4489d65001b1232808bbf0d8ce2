@@ -42,20 +42,4 @@ Svar på förberedelseuppgifter för labb 2:
 	Inga konstigheter. Baserade på de färdiga testerna.
 	
 #D7
-	a) Man hade nog kunnat göra det, men det hade krävts mer logik än att bara delegera.
-		Man hade exempelvis behövt se till att offer lägger in i början av listan
-		och att poll då tar från den första positionen och shiftar över allt.
-		
-	b) D1 är ju trevlig eftersom att den delegerar allt som lätt kan bli fel till en färdig klass, men D3
-		ökar ju förståelsen för datastrukturen vilket gör att man kanske kan komma fram till mer effektiv
-		kod då man förstår den underliggande teorin.
-		
-	c) Det kan vara olämpligt att använda färdiga när effektivitet och exekveringstid är viktig.
-		I sådanna situationer är det bäst att ha full kontroll över allt som sker, dock är det
-		nog i nästan alla fall så att den färdigimplementerade redan är väldigt optimerad.
-		
-	d) Inte direkt. Mina test-cases kan ju vara felaktiga, och jag kan ju ha missat att skriva
-		tester i edge-cases eller annat som då skulle komma undan.
-
-		
-		
+	a) 
