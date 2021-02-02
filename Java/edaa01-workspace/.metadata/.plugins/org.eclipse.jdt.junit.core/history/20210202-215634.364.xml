@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAppendFifoQueue (1)" project="lab2" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="testqueue.TestAppendFifoQueue" time="0.031" displayname="TestAppendFifoQueue" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]">
+    <testcase name="testAppendTwoQueues" classname="testqueue.TestAppendFifoQueue" time="0.018" displayname="testAppendTwoQueues()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendTwoQueues()]"/>
+    <testcase name="testAppendSameEmptyQueue" classname="testqueue.TestAppendFifoQueue" time="0.001" displayname="testAppendSameEmptyQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendSameEmptyQueue()]"/>
+    <testcase name="testAppendTwoQueuesWhereSecondaryIsEmpty" classname="testqueue.TestAppendFifoQueue" time="0.002" displayname="testAppendTwoQueuesWhereSecondaryIsEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendTwoQueuesWhereSecondaryIsEmpty()]"/>
+    <testcase name="testAppendTwoQueuesWherePrimaryIsEmpty" classname="testqueue.TestAppendFifoQueue" time="0.001" displayname="testAppendTwoQueuesWherePrimaryIsEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendTwoQueuesWherePrimaryIsEmpty()]"/>
+    <testcase name="testAppendTwoEmptyQueues" classname="testqueue.TestAppendFifoQueue" time="0.001" displayname="testAppendTwoEmptyQueues()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendTwoEmptyQueues()]"/>
+    <testcase name="testAppendSameQueue" classname="testqueue.TestAppendFifoQueue" time="0.001" displayname="testAppendSameQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendSameQueue()]"/>
+    <testcase name="assertSecondaryIsEmpty" classname="testqueue.TestAppendFifoQueue" time="0.007" displayname="assertSecondaryIsEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:assertSecondaryIsEmpty()]"/>
+  </testsuite>
+</testrun>

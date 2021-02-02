@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestFifoQueue (1)" project="lab2" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="testqueue.TestFifoQueue" time="0.036" displayname="TestFifoQueue" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]">
+    <testcase name="testOrder" classname="testqueue.TestFifoQueue" time="0.015" displayname="testOrder()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testOrder()]"/>
+    <testcase name="testPeek" classname="testqueue.TestFifoQueue" time="0.002" displayname="testPeek()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testPeek()]"/>
+    <testcase name="testPoll" classname="testqueue.TestFifoQueue" time="0.001" displayname="testPoll()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testPoll()]"/>
+    <testcase name="testNewFifoQueue" classname="testqueue.TestFifoQueue" time="0.001" displayname="testNewFifoQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testNewFifoQueue()]"/>
+    <testcase name="testMakeQueueEmpty" classname="testqueue.TestFifoQueue" time="0.001" displayname="testMakeQueueEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testMakeQueueEmpty()]"/>
+    <testcase name="testIteratorEmptyQueue" classname="testqueue.TestFifoQueue" time="0.003" displayname="testIteratorEmptyQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testIteratorEmptyQueue()]"/>
+    <testcase name="testPeekOfEmpty" classname="testqueue.TestFifoQueue" time="0.002" displayname="testPeekOfEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testPeekOfEmpty()]"/>
+    <testcase name="testPollOfEmpty" classname="testqueue.TestFifoQueue" time="0.001" displayname="testPollOfEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testPollOfEmpty()]"/>
+    <testcase name="testIteratorNonEmptyQueue" classname="testqueue.TestFifoQueue" time="0.001" displayname="testIteratorNonEmptyQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testIteratorNonEmptyQueue()]"/>
+    <testcase name="testStringQueue" classname="testqueue.TestFifoQueue" time="0.001" displayname="testStringQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testStringQueue()]"/>
+    <testcase name="testThreeIterators" classname="testqueue.TestFifoQueue" time="0.008" displayname="testThreeIterators()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testThreeIterators()]"/>
+  </testsuite>
+</testrun>

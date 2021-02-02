@@ -137,7 +137,7 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	
 	private class FifoQueueIterator implements Iterator<E> {
 		private QueueNode<E> position;
-		private int i = 0;
+		private boolean isRevisiting = false;
 		
 		private FifoQueueIterator( ) {
 			
@@ -151,22 +151,28 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 		
 		@Override
 		public boolean hasNext() {
-			if(i >= size) {
+			if(size == 0 || position == null || position.next == null) {
 				return false;
 			}
 			
-			return  true;
+			if(position == last.next && isRevisiting) {
+				position = null;
+				return false;
+			}
+			
+			return true;
 		}
 
 		@Override
 		public E next() {
-			if(position == null || i >= size) {
+			if(position == null) {
 				throw new NoSuchElementException();
 			}
+			
+			isRevisiting = true;
 		
 			E value = position.element;
 			position = position.next;
-			i++;
 			
 			return value;
 		}
