@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestFifoQueue.testPoll" project="lab2" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="testqueue.TestFifoQueue" time="0.028" displayname="TestFifoQueue" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]">
+    <testcase name="testPoll" classname="testqueue.TestFifoQueue" time="0.028" displayname="testPoll()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestFifoQueue]/[method:testPoll()]"/>
+  </testsuite>
+</testrun>

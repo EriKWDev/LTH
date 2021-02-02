@@ -1,5 +1,8 @@
 package lpt;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Job {
 	private String name;
 	private int time;

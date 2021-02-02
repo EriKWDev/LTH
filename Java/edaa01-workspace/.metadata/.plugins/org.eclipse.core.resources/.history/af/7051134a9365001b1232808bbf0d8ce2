@@ -1,0 +1,34 @@
+package testqueue;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Queue;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import queue_singlelinkedlist.FifoQueue;
+
+class TestAppendFifoQueue {
+	private Queue<Integer> myPrimaryIntQueue;
+	private Queue<Integer> mySecondaryIntQueue;
+
+	@BeforeEach
+	void setUp() {
+		myPrimaryIntQueue = new FifoQueue<Integer>();
+		mySecondaryIntQueue = new FifoQueue<Integer>();
+	}
+
+	@AfterEach
+	void tearDown() {
+		myPrimaryIntQueue = null;
+		mySecondaryIntQueue = null;
+	}
+
+	@Test
+	void testAppendTwoEmptyQueues() {
+		fail("Not yet implemented");
+	}
+
+}

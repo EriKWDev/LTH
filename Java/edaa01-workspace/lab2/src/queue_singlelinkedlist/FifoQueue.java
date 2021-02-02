@@ -19,7 +19,22 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * 			to this queue, else false
 	 */
 	public boolean offer(E e) {
-		return false;
+		QueueNode<E> newNode = new QueueNode<E>(e);
+		
+		if(last == null) {
+			last = newNode;
+			last.next = last;
+			size = 1;
+			return true;
+		}
+		
+		QueueNode<E> oldLast = last;
+		newNode.next = last.next;
+		last = newNode;
+		oldLast.next = last;
+		size++;
+		
+		return true;
 	}
 	
 	/**	
@@ -27,7 +42,7 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @return the number of elements in this queue
 	 */
 	public int size() {		
-		return 0;
+		return size;
 	}
 	
 	/**	
@@ -37,7 +52,11 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * 			if this queue is empty
 	 */
 	public E peek() {
-		return null;
+		if(last == null) {
+			return null;
+		}
+		
+		return last.next.element;
 	}
 
 	/**	
@@ -47,7 +66,65 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @return 	the head of this queue, or null if the queue is empty 
 	 */
 	public E poll() {
-		return null;
+		if(last == null) {
+			return null;
+		}
+		
+		E value = last.next.element;
+		
+		last.next = last.next.next;
+		
+		size--;
+		
+		if(size <= 0) {
+			last = null;
+			size = 0;
+		}
+		
+		return value;
+	}
+	
+	/**
+	* Appends the specified queue to this queue
+	* post: all elements from the specified queue are appended
+	* to this queue. The specified queue (q) is empty after the call.
+	* @param q the queue to append
+	* @throws IllegalArgumentException if this queue and q are identical
+	*/
+	public void append(FifoQueue<E> q) {
+		if(this.equals(q)) {
+			throw new IllegalArgumentException();
+		}
+		
+		if(q.last == null) {
+			return;
+		}
+		
+		// Om denna lista är null kan vi bara peka till datan från den andra.
+		if(last == null) {
+			last = q.last;
+			size = q.size;
+			
+			// Töm den andra listan.
+			q.size = 0;
+			q.last = null;
+			return;
+		}
+		
+		QueueNode<E> oldLast = last;
+		QueueNode<E> first = last.next;
+		oldLast.next = q.last.next;
+		
+		// Peka den andra listans sista next till denna listans första
+		q.last.next = first;
+		
+		// Peka den sista till den andra listans sista
+		last = q.last;
+		
+		// Töm den andra listan.
+		size += q.size;
+		q.size = 0;
+		q.last = null;
 	}
 	
 	/**	
@@ -55,15 +132,52 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @return an iterator over the elements in this queue
 	 */	
 	public Iterator<E> iterator() {
-		return null;
+		return new FifoQueueIterator();
+	}
+	
+	private class FifoQueueIterator implements Iterator<E> {
+		private QueueNode<E> position;
+		private int i = 0;
+		
+		private FifoQueueIterator( ) {
+			
+			if(last == null) {
+				position = null;
+				return;
+			}
+			
+			position = last.next;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			if(i >= size) {
+				return false;
+			}
+			
+			return  true;
+		}
+
+		@Override
+		public E next() {
+			if(position == null || i >= size) {
+				throw new NoSuchElementException();
+			}
+		
+			E value = position.element;
+			position = position.next;
+			i++;
+			
+			return value;
+		}
 	}
 	
 	private static class QueueNode<E> {
 		E element;
 		QueueNode<E> next;
 
-		private QueueNode(E x) {
-			element = x;
+		private QueueNode(E element) {
+			this.element = element;
 			next = null;
 		}
 	}

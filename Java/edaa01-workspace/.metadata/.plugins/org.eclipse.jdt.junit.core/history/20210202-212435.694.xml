@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAppendFifoQueue (1)" project="lab2" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="testqueue.TestAppendFifoQueue" time="0.025" displayname="TestAppendFifoQueue" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]">
+    <testcase name="testAppendTwoEmptyQueues" classname="testqueue.TestAppendFifoQueue" time="0.014" displayname="testAppendTwoEmptyQueues()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendTwoEmptyQueues()]"/>
+    <testcase name="testAppendSameQueue" classname="testqueue.TestAppendFifoQueue" time="0.003" displayname="testAppendSameQueue()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:testAppendSameQueue()]"/>
+    <testcase name="assertSecondaryIsEmpty" classname="testqueue.TestAppendFifoQueue" time="0.008" displayname="assertSecondaryIsEmpty()" uniqueid="[engine:junit-jupiter]/[class:testqueue.TestAppendFifoQueue]/[method:assertSecondaryIsEmpty()]"/>
+  </testsuite>
+</testrun>
