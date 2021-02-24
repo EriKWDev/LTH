@@ -1,0 +1,72 @@
+package bst;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class BinarySearchTreeTest {
+	private BinarySearchTree<Integer> myIntegerBST1;
+	private BinarySearchTree<Integer> myIntegerBST2;
+	private BinarySearchTree<String> myStringBST1;
+	private BinarySearchTree<String> myStringBST2;
+	
+	
+	@BeforeEach
+	void setUp() {
+		myIntegerBST1 = new BinarySearchTree<>();
+		myIntegerBST2 = new BinarySearchTree<>((a, b) -> a.compareTo(b));
+		
+		myStringBST1 = new BinarySearchTree<>();
+		myStringBST2 = new BinarySearchTree<>((a, b) -> a.compareTo(b));
+	}
+
+	@AfterEach
+	void tearDown() {
+		myIntegerBST1 = null;
+		myIntegerBST2 = null;
+		myStringBST1 = null;
+		myStringBST2 = null;
+	}
+
+	@Test
+	void testHeightAndSizeOfEmptyTree() {
+		assertEquals(0, myIntegerBST1.size());
+		assertEquals(0, myIntegerBST1.height());
+		assertEquals(0, myIntegerBST2.size());
+		assertEquals(0, myIntegerBST2.height());
+		
+		assertEquals(0, myStringBST1.size());
+		assertEquals(0, myStringBST2.height());
+		assertEquals(0, myStringBST1.size());
+		assertEquals(0, myStringBST2.height());
+	}
+	
+	@Test
+	void testAddOnDefaultComparator() {
+		assertTrue(myIntegerBST1.add(10));
+		assertEquals(1, myIntegerBST1.size());
+		assertFalse(myIntegerBST1.add(10));
+		assertEquals(1, myIntegerBST1.size());
+		
+		assertTrue(myStringBST1.add("A"));
+		assertEquals(1, myStringBST1.size());
+		assertFalse(myStringBST1.add("A"));
+		assertEquals(1, myStringBST1.size());
+	}
+	
+	void testAddOnLambdaComparator() {
+		assertTrue(myIntegerBST1.add(10));
+		assertEquals(1, myIntegerBST1.size());
+		assertFalse(myIntegerBST1.add(10));
+		assertEquals(1, myIntegerBST1.size());
+	}
+	
+	@Test
+	void testHeightAndSizeOfNonEmptyTree() {
+		myIntegerBST1.add(10);
+		assertEquals(1, myIntegerBST1.size());
+		assertEquals(1, myIntegerBST1.height());
+	}
+}

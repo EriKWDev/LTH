@@ -1,0 +1,116 @@
+package mountain;
+
+import java.util.HashMap;
+
+import fractal.*;
+
+public class Mountain extends Fractal {
+	private Point startPoint1;
+	private Point startPoint2;
+	private Point startPoint3;
+	
+	private HashMap<Side, Point> sideMiddleMap = new HashMap<>();
+	
+	public Mountain(Point point1, Point point2, Point point3) {
+		super();
+		this.startPoint1 = point1;
+		this.startPoint2 = point2;
+		this.startPoint3 = point3;
+	}
+	
+	public String getTitle() {
+		return "Mountain Fractal";
+	}
+
+	public void draw(TurtleGraphics turtle) {
+		turtle.moveTo(startPoint1.getX(), startPoint1.getY());
+		
+		drawTriangleWithDev(turtle, order, 20, startPoint1, startPoint2, startPoint3);
+	}
+	
+	private Point averagePoint(Point[] points) {
+		int x = 0;
+		int y = 0;
+		
+		for(Point p : points) {
+			x += p.getX();
+			y += p.getY();
+		}
+		
+		if(points.length > 0) {
+			x /= points.length;
+			y /= points.length;
+		}
+		
+		return new Point(x, y);
+	}
+	
+	private Point center(Point pointA, Point pointB) {
+		Point[] points = {pointA, pointB};
+		
+		return averagePoint(points);
+	}
+	
+	private void drawTriangleWithDev(TurtleGraphics turtle, int order, double dev, Point point1, Point point2, Point point3) {
+		if(order == 0) {
+			turtle.moveTo(point1.getX(), point1.getY());
+			turtle.penDown();
+			
+			turtle.forwardTo(point2.getX(), point2.getY());
+			turtle.forwardTo(point3.getX(), point3.getY());
+			turtle.forwardTo(point1.getX(), point1.getY());
+			
+			turtle.penUp();
+		} else {
+			Point offset1, offset2, offset3 = null;
+			
+			Side side1 = new Side(point1, point2);
+			Side side2 = new Side(point2, point3);
+			Side side3 = new Side(point3, point1);
+			
+			if(sideMiddleMap.containsKey(side1)) {
+				offset1 = sideMiddleMap.get(side1);
+			} else {
+				int random = (int) RandomUtilities.randFunc(dev);
+				Point point12 = center(point1, point2);
+				offset1 = new Point(point12.getX(), point12.getY() + random);
+				sideMiddleMap.put(side1, offset1);
+			}
+			
+			if(sideMiddleMap.containsKey(side2)) {
+				offset2 = sideMiddleMap.get(side2);
+			} else {
+				int random = (int) RandomUtilities.randFunc(dev);
+				Point point12 = center(point1, point2);
+				offset1 = new Point(point12.getX(), point12.getY() + random);
+				sideMiddleMap.put(side1, offset1);
+			}
+			
+			if(sideMiddleMap.containsKey(side3)) {
+				offset3 = sideMiddleMap.get(side3);
+			} else {
+				int random = (int) RandomUtilities.randFunc(dev);
+				Point point12 = center(point1, point2);
+				offset1 = new Point(point12.getX(), point12.getY() + random);
+				sideMiddleMap.put(side1, offset1);
+			}
+			
+			int random2 = (int) RandomUtilities.randFunc(dev);
+			Point point23 = center(point2, point3);
+			offset2 = new Point(point23.getX(), point23.getY() + random2);
+			
+			int random3 = (int) RandomUtilities.randFunc(dev);
+			Point point31 = center(point3, point1);
+			offset3 = new Point(point31.getX(), point31.getY() + random3);
+			
+			double newDev = dev/2;
+			
+			drawTriangleWithDev(turtle, order - 1, newDev, point1, offset1, offset3);
+			drawTriangleWithDev(turtle, order - 1, newDev, offset1, point2, offset2);
+			drawTriangleWithDev(turtle, order - 1, newDev, offset3, offset2, point3);
+			
+			drawTriangleWithDev(turtle, order - 1, newDev, offset1, offset2, offset3);
+		}
+	}
+	
+}

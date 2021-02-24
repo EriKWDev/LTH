@@ -5,8 +5,8 @@ Svar på förberedelseuppgifter för labb 2:
 
 # F2:
 	a) null
-	b) QueueNode<E> n = first;
-	c) E e = first.element;
+	b) QueueNode<E> n = last.next;
+	c) E e = last.next.element;
 
 # F3:
 	a) assertFalse
@@ -17,7 +17,9 @@ Svar på förberedelseuppgifter för labb 2:
 
 # F5:
 	Läs alla uppgifter
-	
+
+---
+
 #D1
 	anropa bara metod med samma namn fast på listan.
 	

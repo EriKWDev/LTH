@@ -1,0 +1,44 @@
+package bst;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class BinarySearchTreeTest {
+	private BinarySearchTree<Integer> myIntegerBST;
+	
+	
+	@BeforeEach
+	void setUp() {
+		myIntegerBST = new BinarySearchTree<Integer>();
+	}
+
+	@AfterEach
+	void tearDown() {
+		myIntegerBST = null;
+	}
+
+	@Test
+	void testHeightAndSizeOfEmptyTree() {
+		assertEquals(myIntegerBST.size(), 0);
+		assertEquals(myIntegerBST.height(), 0);
+	}
+	
+	@Test
+	void testAdd() {
+		assertTrue(myIntegerBST.add(10));
+		assertEquals(myIntegerBST.size(), 1);
+		
+		assertFalse(myIntegerBST.add(10));
+		assertEquals(myIntegerBST.size(), 1);
+	}
+	
+	@Test
+	void testHeightAndSizeOfNonEmptyTree() {
+		myIntegerBST.add(10);
+		assertEquals(myIntegerBST.size(), 1);
+		assertEquals(myIntegerBST.height(), 1);
+	}
+}

@@ -30,6 +30,10 @@ public class GeneralWordCounter implements TextProcessor {
 		wordCountMap.put(word, wordCountMap.get(word) + 1);
 	}
 	
+	public List<Map.Entry<String, Integer>> getWordList() {
+		return new ArrayList<>(wordCountMap.entrySet());
+	}
+	
 	public void report() {
 		Set<Map.Entry<String, Integer>> wordSet = wordCountMap.entrySet();
 		List<Map.Entry<String, Integer>> wordList = new ArrayList<>(wordSet);

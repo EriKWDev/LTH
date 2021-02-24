@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="MyFirstTest" project="banktest" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="test.MyFirstTest" time="0.001" displayname="MyFirstTest" uniqueid="[engine:junit-jupiter]/[class:test.MyFirstTest]">
-    <testcase name="addition" classname="test.MyFirstTest" time="0.001" displayname="addition()" uniqueid="[engine:junit-jupiter]/[class:test.MyFirstTest]/[method:addition()]"/>
-  </testsuite>
-</testrun>
