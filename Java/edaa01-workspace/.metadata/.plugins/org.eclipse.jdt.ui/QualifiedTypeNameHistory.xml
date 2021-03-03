@@ -2,10 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
     <fullyQualifiedTypeName name="org.junit.Test"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.util.TreeMap"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
@@ -24,6 +21,14 @@
     <fullyQualifiedTypeName name="mountain.Mountain"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="bst.BinarySearchTree.BinaryNode"/>
+    <fullyQualifiedTypeName name="bst.BinarySearchTree"/>
+    <fullyQualifiedTypeName name="bst.BSTVisualizer"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="map.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

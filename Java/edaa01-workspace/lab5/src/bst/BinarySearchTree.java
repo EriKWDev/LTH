@@ -12,9 +12,9 @@ public class BinarySearchTree<E> {
     
 	  
 	  public static void main(String[] args) {
-		  //drawIntegerTree();
+		  drawIntegerTree();
 		  //drawStringTree();
-		  rebuildAndDrawTree();
+		  //rebuildAndDrawTree();
 	  }
 	  
 	  private static void rebuildAndDrawTree() {
@@ -50,6 +50,7 @@ public class BinarySearchTree<E> {
 			  }
 			  
 			bst.printTree();
+			bst.rebuild();
 		  
 		  BSTVisualizer treeVisualizer = new BSTVisualizer("Test", 800, 600);
 		  treeVisualizer.drawTree(bst);
@@ -66,7 +67,7 @@ public class BinarySearchTree<E> {
 			
 			bst.printTree();
 			
-		  
+		  //bst.rebuild();
 		  BSTVisualizer treeVisualizer = new BSTVisualizer("Test", 800, 600);
 		  treeVisualizer.drawTree(bst);
 	  }
@@ -113,6 +114,7 @@ public class BinarySearchTree<E> {
 			if(parentNode.left == null) {
 				parentNode.left = newNode;
 				size++;
+				
 				return true;
 			}
 			

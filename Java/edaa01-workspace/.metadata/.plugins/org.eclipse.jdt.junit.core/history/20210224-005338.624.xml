@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BinarySearchTreeTest" project="lab5" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="bst.BinarySearchTreeTest" time="0.0" displayname="BinarySearchTreeTest" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]">
-    <testcase name="testHeightAndSizeOfNonEmptyTree" classname="bst.BinarySearchTreeTest" time="0.0" displayname="testHeightAndSizeOfNonEmptyTree()" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]/[method:testHeightAndSizeOfNonEmptyTree()]"/>
-    <testcase name="testIntegerBSTHeight" classname="bst.BinarySearchTreeTest" time="0.0" displayname="testIntegerBSTHeight()" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]/[method:testIntegerBSTHeight()]"/>
-    <testcase name="testHeightAndSizeOfEmptyTree" classname="bst.BinarySearchTreeTest" time="0.0" displayname="testHeightAndSizeOfEmptyTree()" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]/[method:testHeightAndSizeOfEmptyTree()]"/>
-    <testcase name="testAddOnDefaultComparator" classname="bst.BinarySearchTreeTest" time="0.0" displayname="testAddOnDefaultComparator()" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]/[method:testAddOnDefaultComparator()]"/>
-    <testcase name="testAddOnLambdaComparator" classname="bst.BinarySearchTreeTest" time="0.0" displayname="testAddOnLambdaComparator()" uniqueid="[engine:junit-jupiter]/[class:bst.BinarySearchTreeTest]/[method:testAddOnLambdaComparator()]"/>
-  </testsuite>
-</testrun>

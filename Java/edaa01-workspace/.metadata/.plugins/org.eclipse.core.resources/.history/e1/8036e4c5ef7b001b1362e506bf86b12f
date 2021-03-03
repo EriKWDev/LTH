@@ -1,0 +1,35 @@
+package map;
+
+import java.util.HashMap;
+
+public class SimpleHashMapApp {
+	public static void main(String[] args) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		System.out.println(map.get("A") + " " + map.size());
+		map.put("A", 43);
+		System.out.println(map.get("A") + " " + map.size());
+		map.put("A", 42);
+		System.out.println(map.get("A") + " " + map.size());
+
+		
+		
+		
+		SimpleHashMap<Integer, Integer> shm = new SimpleHashMap();
+		shm.put(-128, 10);
+		shm.put(128, 48);
+		shm.put(128, 56);
+		shm.put(128, 89);
+		
+		int n = 130;
+		for(int i = -n; i <= n; i++) {
+			shm.put(i, i*2);
+		}
+		
+		shm.remove(0);
+		
+		shm.put(10, 4);
+		shm.put(2, 345);
+		
+		System.out.println(shm.show());
+	}
+}

@@ -1,0 +1,18 @@
+package map;
+
+public class SimpleHashMapApp {
+	public static void main(String[] args) {
+		SimpleHashMap<Integer, Integer> shm = new SimpleHashMap();
+		shm.put(-128, 10);
+		shm.put(128, 48);
+		shm.put(128, 56);
+		shm.put(128, 89);
+		
+		shm.remove(-128);
+		
+		shm.put(10, 4);
+		shm.put(2, 345);
+		
+		System.out.println(shm.show());
+	}
+}
