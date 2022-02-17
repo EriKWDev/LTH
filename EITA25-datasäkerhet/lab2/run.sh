@@ -1,0 +1,1 @@
+clear && gcc -Wall -o mylogin mylogin.c pwdblib.c -lcrypt && ./mylogin
